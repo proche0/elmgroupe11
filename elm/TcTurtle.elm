@@ -5,6 +5,4 @@ type Instruction
     | Left Int
     | Right Int
     | Repeat Int (List Instruction)
-    | Color String
-    | Width String
 type alias Program = List Instruction

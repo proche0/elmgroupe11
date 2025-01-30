@@ -1,5 +1,6 @@
 module Main exposing (main)
 
+import Parser exposing (Parser, DeadEnd)
 import Browser
 import Html exposing (Html, div, input, button, text)
 import Html.Attributes exposing (placeholder, value)
@@ -21,8 +22,6 @@ init =
     { input = ""
     , parsedProgram = Err [] }
 
--- UPDATE
-
 type Msg
     = UpdateInput String
     | RunProgram
@@ -35,8 +34,6 @@ update msg model =
 
         RunProgram ->
             { model | parsedProgram = parseProgram model.input }
-
--- VIEW
 
 view : Model -> Html Msg
 view model =
@@ -53,8 +50,5 @@ view model =
             Err _ -> text "Erreur de parsing ! Vérifiez votre syntaxe."
         ]
 
--- PROGRAMME PRINCIPAL
-
-main : Program () Model Msg
 main =
     Browser.sandbox { init = init, update = update, view = view }
