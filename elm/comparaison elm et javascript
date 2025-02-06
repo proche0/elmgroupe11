@@ -1,0 +1,23 @@
+Comparaison entre Elm et JavaScript dans le cadre du projet TcTurtle
+
+Le choix entre Elm et JavaScript pour le développement d'une application web d'interprétation et d'affichage de dessins TcTurtle repose sur plusieurs critères clés : la sécurité, la simplicité et la maintenabilité du code.
+
+1. Sécurité et gestion des erreurs
+
+Elm se distingue par son système de types strict et son absence d'exceptions à l'exécution. Contrairement à JavaScript, où des erreurs peuvent survenir en raison de types mal gérés ou de références indéfinies, Elm garantit à la compilation que toutes les erreurs potentielles sont traitées. Dans le cadre du projet TcTurtle, cela permet d'éviter des comportements inattendus liés à l'interprétation des commandes.
+
+2. Simplicité et lisibilité du code
+
+Elm adopte une approche fonctionnelle avec une architecture unidirectionnelle, ce qui facilite la compréhension du flux des données et la gestion des états. JavaScript, en revanche, offre plus de flexibilité, notamment avec des bibliothèques comme React, mais cela peut entraîner une plus grande complexité dans la gestion des effets de bord. L'implémentation du parseur et de l'affichage graphique en Elm est ainsi plus prévisible et moins sujette aux bugs.
+
+3. Maintenabilité et évolutivité
+
+Elm favorise un code modulaire et robuste grâce à son système de modules et à son typage fort. En JavaScript, bien que TypeScript puisse apporter une sécurité similaire, la diversité des approches et des bibliothèques peut compliquer l'évolution du projet. L'usage d'Elm pour TcTurtle garantit un code plus cohérent et plus facile à maintenir sur le long terme.
+
+4. Performances et interopérabilité
+
+JavaScript bénéficie d'un écosystème plus large et d'une exécution directe dans les navigateurs, offrant ainsi une flexibilité d'interopérabilité avec d'autres technologies. Elm génère un code optimisé, mais il nécessite parfois des ports pour interagir avec des bibliothèques JavaScript. Cependant, dans le cadre de TcTurtle, où le besoin d'interopérabilité est limité, Elm se révèle suffisant et performant.
+
+Conclusion
+
+Elm est un choix pertinent pour le projet TcTurtle en raison de sa fiabilité, de sa lisibilité et de sa maintenabilité, bien qu'il impose un cadre plus rigide que JavaScript. Ce dernier reste plus flexible et compatible avec un écosystème plus vaste, mais au prix d'une plus grande complexité. Le choix d’Elm pour ce projet garantit ainsi une application robuste et sans surprises.
