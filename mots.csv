@@ -1,11 +1,32 @@
-Thème,Sports,Véhicules,Animaux,Informatique
-1,Football,Voiture,Chien,Ordinateur
-2,Basketball,Moto,Chat,Clavier
-3,Tennis,Vélo,Lion,Souris
-4,Natation,Avion,Tigre,Écran
-5,Course,Bateau,Éléphant,Imprimante
-6,Boxe,Train,Cheval,Disque dur
-7,Volley-ball,Bus,Oiseau,Carte mère
-8,Handball,Tracteur,Poisson,Processeur
-9,Rugby,Voilier,Singe,Logiciel
-10,Escrime,Montgolfière,Lapin,Serveur
+modifie ces deux fichiers pour intégrer les bgp policies qu on a  configuré au-dessus sur les routeurs tout en respectant les consignes : 
+The intent file MUST describe which Interior Gateway Protocol is used in an AS. The script will auto-
+matically enable the specified IGP on the routers of the AS.
+The intent file MUST describe to which BGP AS a given router belongs. The intent file MUST
+capture the necessary information for the iBGP sessions and eBGP to be established.
+3.4 Policies je veux que tu me donnes le code complet pour chaque fichier
+3.4.1 BGP Policies
+Specific routing policies are typically applied on BGP sessions based on the business relationship with the
+neighboring AS. The intent file SHOULD capture such policies so that network automation can tweak
+the policies applied on the eBGP sessions accordingly.
+• Learn how to tag routes received from eBGP neighbours with communities.
+• Learn how to configure iBGP sesssions to transmit communities along with BGP paths.
+• Learn how to filter routes using route-maps based on BGP communities.
+• Tag paths received from an eBGP neighbor with a community in your gns setup.
+• Filter the paths advertised to another eBGP neighbor so as to only advertise the paths which have
+the community.
+Once this is done, you can automate your external policies in your network configuration tool.
+• Adapt your intent file so as to be able to describe whether a neigbhouring AS is a customer, a
+provider, or a settlement-free peer.
+• Automate the setting of the local-pref attribute of BGP paths so as to prefer customers over
+settlement-free peers over providers.
+• Automate the configuration of your policies using communities so as to only propagate customer
+paths to providers and settlement-free peers.
+• Enjoy the fact that your peers and providers no longer get free rides on your network(s) :)
+2024-2025 2/3
+3TC-GNS3 TC
+3.4.2 OSPF Metric Optimization
+OSPF can be engineered for better traffic distribution by setting link costs to other values than the
+default capacity-based value. The intent file SHOULD allow for the definition of such metrics.
+• Learn how to set the metric of a link in OSPFv3 using the cost command.
+• Validate the effect of the cost command has on your internal routing.
+• Allow for the configuration of such costs in your intent file
