@@ -1,0 +1,40 @@
+TcTurtle - Interpréteur graphique en Elm
+
+Description
+
+TcTurtle est une application web développée en Elm qui interprète et affiche des dessins basés sur le langage TcTurtle. Ce projet met en œuvre un parser pour analyser les commandes TcTurtle et les convertir en représentations graphiques SVG.
+
+Fonctionnalités
+
+Parsing des instructions TcTurtle
+
+Interprétation et rendu graphique en SVG
+
+Interface utilisateur interactive
+
+Technologies utilisées
+
+Elm pour l'architecture et l'affichage
+
+HTML/CSS pour la structure et le style
+
+SVG pour le rendu des dessins
+
+Lancer le projet :
+
+elm reactor
+
+Puis ouvrir http://localhost:8000 dans un navigateur.
+
+Structure du projet
+
+
+Main.elm : Point d'entrée de l'application
+
+ParserTcTurtle.elm : Analyseur syntaxique des commandes TcTurtle
+
+TcTurtleRenderer.elm : Interprétation et rendu graphique
+
+Auteurs
+
+Projet développé par Brélivet Julien et Roche Paul
