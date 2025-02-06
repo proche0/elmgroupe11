@@ -92,7 +92,7 @@ function ChoisirMot(MotsPrecedents) {
                     return;
                 }
 
-                console.log(records[0].slice(1).join(' | '));
+                console.log(records[0].join(' | '));
         
                 rl.question('Entrez le nom du thème choisi : ', (input) => {
                     const themeChoice = input.trim().replace(/^['"]|['"]$/g, '').toLowerCase();
