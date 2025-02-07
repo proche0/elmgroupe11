@@ -83,7 +83,7 @@ function ChoisirMot(MotsPrecedents) {
                     return reject(err);
                 }
 
-                console.log(records[0].slice(1).join(' | '));
+                console.log(records[0].join(' | '));
                 let input = await question('Entrez le nom du thème choisi : ');
                 let themeChoice = input.trim().toLowerCase();
                 let themeIndex = records[0].findIndex(theme => theme.toLowerCase() === themeChoice);
