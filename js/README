@@ -9,3 +9,4 @@ Règles du jeu :
 Un joueur doit deviner un mot à l'aide d'indices donnés par les autres joueurs. Ces indices doivent être un unique mot au singulier sans faute (afin de supprimer les doublons).
 Si deux indices sont similaires ils ne seront pas donnés au joueur qui doit deviner le mot.
 A la fin du nombre de tour choisi le score sera affiché.
+Un fichier historique.json est créé au début de la partie et actualisé à chaque manche.
