@@ -1,0 +1,11 @@
+Ce programme permet de jouer au JustOne de 3 à 5 joueurs, pour le lancer importer le dossier avec :
+git clone https://github.com/proche0/elpgroupe11
+
+Puis sur le terminal dans le dossier exécutez :
+npm install
+npm start
+
+Règles du jeu :
+Un joueur doit deviner un mot à l'aide d'indice donner par les autres joueurs. Ces indices doivent être un unique mot au singulier sans faute.
+Si deux indices sont similaires ils ne seront pas donnés au joueur qui doit deviner le mot.
+A la fin du nombre de manche choisie le score sera affichée.
