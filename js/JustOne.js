@@ -62,10 +62,10 @@ async function Deviner(IndicesValides, JoueurDevine, ChoisirMot) {
     let tentative = await question(`${JoueurDevine}, tes indices sont : ${IndicesValides.join(", ")}. Quel est ton mot ? `);
     if (tentative.toLowerCase() === ChoisirMot.toLowerCase()) {
         console.log('Félicitations, tu as trouvé le mot !');
-        return [true,tentative]);
+        return [true,tentative];
     } else {
         console.log('Aïe... Ce n\'était pas le bon mot.');
-        return [false,tentative]);
+        return [false,tentative];
     }
 }
 
