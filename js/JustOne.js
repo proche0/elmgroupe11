@@ -34,7 +34,7 @@ function Roles(listeJoueurs) {
     let i = Math.floor(Math.random() * listeJoueurs.length);
     let JoueurDevine = listeJoueurs[i];
     let JoueurIndice = listeJoueurs.filter((_, index) => index !== i);
-    console.log(`${JoueurDevine} devinera le mot des autres joueurs.`);
+    console.log(`${JoueurDevine} devinera le mot.`);
     return [JoueurDevine, JoueurIndice];
 }
 
