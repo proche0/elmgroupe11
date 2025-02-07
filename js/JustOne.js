@@ -109,7 +109,7 @@ function ChoisirMot(MotsPrecedents) {
 }
 
 function demanderNombreManches() {
-    rl.question('Combien de manches voulez-vous faire ? ', (nombreManches) => {
+    rl.question('Combien de tours voulez-vous faire ? ', (nombreManches) => {
         nombreManches = parseInt(nombreManches);
         if (isNaN(nombreManches) || nombreManches <= 0) {
             console.log("Nombre de manches invalide. Veuillez entrer un nombre supérieur à 0.");
@@ -145,7 +145,7 @@ function main() {
         console.log(`Score après la manche ${i}: ${score}\n`);
     }
 
-    console.log(`Fin de la partie ! Score final : ${score} sur ${nombreManches} manches.`);
+    console.log(`Fin de la partie ! Score final : ${score} sur ${nombreManches} tours.`);
     rl.close();
 }
 
