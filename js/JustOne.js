@@ -70,14 +70,12 @@ function ChoisirMot(MotsPrecedents) {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error('Erreur lors de la lecture du fichier:', err);
-            reject(err);
             return;
         }
     
         parse(data, {delimiter: ','}, (err, records) => {
             if (err) {
                 console.error('Erreur lors du parsing du CSV:', err);
-                reject(err);
                 return;
             }
 
@@ -97,11 +95,11 @@ function ChoisirMot(MotsPrecedents) {
                     } while (MotsPrecedents.includes(motsMystere));
     
                     console.log("Mot mystère choisi : "+ String(motsMystere));
-                    resolve(motsMystere);
+                    return(motsMystere);
 
                 } else {
                     console.log('Choix invalide. Veuillez entrer un nom valide parmi les thèmes.');
-                    resolve(ChoisirMot(MotsPrecedents));
+                    return(ChoisirMot(MotsPrecedents));
                 }
             });
         });
@@ -112,7 +110,7 @@ function demanderNombreManches() {
     rl.question('Combien de tours voulez-vous faire ? ', (nombreManches) => {
         nombreManches = parseInt(nombreManches);
         if (isNaN(nombreManches) || nombreManches <= 0) {
-            console.log("Nombre de manches invalide. Veuillez entrer un nombre supérieur à 0.");
+            console.log("Nombre de tours invalide. Veuillez entrer un nombre supérieur à 0.");
             poserQuestion();
         } else {
             return(nombreManches);
@@ -130,7 +128,7 @@ function main() {
     const nombreManches = demanderNombreManches();
 
     for (let i = 1; i <= nombreManches; i++) {
-        console.log(`\n--- Début de la manche ${i} ---`);
+        console.log(`\n--- Début du tour ${i} ---`);
         const [JoueurDevine, JoueurIndice] = Roles(listeJoueurs);
         const motsMystere = ChoisirMot(MotsPrecedents);
         const listeIndices = ListeIndices(JoueurIndice, motsMystere);
@@ -142,7 +140,7 @@ function main() {
         }
 
         MotsPrecedents.push(motsMystere);
-        console.log(`Score après la manche ${i}: ${score}\n`);
+        console.log(`Score après le tour ${i}: ${score}\n`);
     }
 
     console.log(`Fin de la partie ! Score final : ${score} sur ${nombreManches} tours.`);
