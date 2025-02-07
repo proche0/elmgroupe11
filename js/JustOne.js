@@ -9,14 +9,12 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-// Fonction utilitaire pour lire une entrée utilisateur de manière asynchrone
 const question = (texte) => {
     return new Promise((resolve) => {
         rl.question(texte, (reponse) => resolve(reponse));
     });
 };
 
-// Demander le nombre de joueurs
 async function demanderNombreJoueurs() {
     while (true) {
         let reponse = await question("Entrez le nombre de joueurs (3 à 5) : ");
@@ -28,7 +26,6 @@ async function demanderNombreJoueurs() {
     }
 }
 
-// Demander les noms des joueurs
 async function demanderNomsJoueurs(nombreJoueurs) {
     let listeJoueurs = [];
     for (let i = 1; i <= nombreJoueurs; i++) {
@@ -38,7 +35,6 @@ async function demanderNomsJoueurs(nombreJoueurs) {
     return listeJoueurs;
 }
 
-// Assigner les rôles
 function Roles(listeJoueurs) {
     let i = Math.floor(Math.random() * listeJoueurs.length);
     let JoueurDevine = listeJoueurs[i];
@@ -47,7 +43,6 @@ function Roles(listeJoueurs) {
     return [JoueurDevine, JoueurIndice];
 }
 
-// Demander les indices aux joueurs
 async function ListeIndices(JoueurIndice, ChoisirMot) {
     let listeIndices = [];
     for (let i = 0; i < JoueurIndice.length; i++) {
@@ -57,14 +52,12 @@ async function ListeIndices(JoueurIndice, ChoisirMot) {
     return listeIndices;
 }
 
-// Filtrer les indices valides
 function IndicesValides(listeIndices) {
     return listeIndices.filter((indice, index) =>
         listeIndices.indexOf(indice) === listeIndices.lastIndexOf(indice)
     );
 }
 
-// Demander au joueur de deviner
 async function Deviner(IndicesValides, JoueurDevine, ChoisirMot) {
     let tentative = await question(`${JoueurDevine}, tes indices sont : ${IndicesValides.join(", ")}. Quel est ton mot ? `);
     if (tentative.toLowerCase() === ChoisirMot.toLowerCase()) {
@@ -76,7 +69,6 @@ async function Deviner(IndicesValides, JoueurDevine, ChoisirMot) {
     }
 }
 
-// Choisir un mot dans le CSV
 function ChoisirMot(MotsPrecedents) {
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, 'utf8', (err, data) => {
@@ -114,7 +106,6 @@ function ChoisirMot(MotsPrecedents) {
     });
 }
 
-// Demander le nombre de manches
 async function demanderNombreManches() {
     while (true) {
         let nombreManches = await question('Combien de tours voulez-vous faire ? ');
@@ -126,7 +117,6 @@ async function demanderNombreManches() {
     }
 }
 
-// Fonction principale
 async function main() {
     console.log('Bienvenue au Just One !');
 
